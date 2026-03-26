@@ -1,0 +1,58 @@
+.card{
+    border-radius: 15px;
+    max-width: 490px;
+    width: 490px;
+    display: block;
+    overflow: hidden;
+}
+
+.cardImg{
+    display: block;
+    width: 100%;
+    object-fit:cover;
+    height: 180px;
+}
+
+.cardBanner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    
+    background-color: #fff;
+}
+
+.cardBanner div {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.cardBanner div span:first-child{
+    font-weight: bold;
+}
+.cardBanner div span:last-child{
+    font-size: 0.90rem;
+}
+.favoriteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+  color: #353535;
+  transition: color 0.2s, fill 0.2s;
+}
+
+.liked .heartIcon {
+  color: transparent;
+}

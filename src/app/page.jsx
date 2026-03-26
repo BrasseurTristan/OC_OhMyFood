@@ -1,10 +1,16 @@
+'use client';
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Steps from "@/components/Steps/Steps";
+import {restaurants} from "../data/restaurants.json"
+import RestaurantCard from "@/components/RestaurantCard/RestaurantCard";
 
 
 
 export default function Home() {
+
+  
   return (
     <>
       <div className={styles.location}>
@@ -26,6 +32,9 @@ export default function Home() {
         <div className={styles.restaurantsContent}>
           <h2>Restaurants</h2>
           <div className={styles.restaurantGrid}>
+            {restaurants.map(({id,name,location,image,isNew}) => (
+              <RestaurantCard key={id} name={name}picture={image} location={location} isNew={isNew} />
+            ))}
             
           </div>
         </div>
