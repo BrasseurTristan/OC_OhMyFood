@@ -1,18 +1,23 @@
 import styles from './RestaurantCard.module.css'
 import { useState } from 'react'
+import Link from 'next/link'
 
-const RestaurantCard = ({name, picture, isNew, location}) => {
+const RestaurantCard = ({slug, name, picture, isNew, location}) => {
 
     const [isLiked, setIsLiked] = useState(false);
     return (
         <article className={styles.card}>
+            <Link href={`/restaurant/${slug}`} key={slug} >
             {isNew && <span className={styles.new}>Nouveau</span>}
             <img className={styles.cardImg} src={picture}></img>
+            </Link>
             <div className={styles.cardBanner}>
+                <Link href={`/restaurant/${slug}`} key={slug} >
                 <div>
                     <span>{name}</span>
                     <span>{location}</span>
                 </div>
+                </Link>
                 <button 
                     className={`${styles.favoriteButton} ${isLiked ? styles.liked : ''}`}
                     onClick={() => setIsLiked(!isLiked)}
