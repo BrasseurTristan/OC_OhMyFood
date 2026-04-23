@@ -6,6 +6,7 @@ const RestaurantCard = ({name, picture, isNew, location}) => {
     const [isLiked, setIsLiked] = useState(false);
     return (
         <article className={styles.card}>
+            {isNew && <span className={styles.new}>Nouveau</span>}
             <img className={styles.cardImg} src={picture}></img>
             <div className={styles.cardBanner}>
                 <div>

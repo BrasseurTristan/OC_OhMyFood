@@ -10,7 +10,6 @@ import RestaurantCard from "@/components/RestaurantCard/RestaurantCard";
 
 export default function Home() {
 
-  
   return (
     <>
       <div className={styles.location}>
